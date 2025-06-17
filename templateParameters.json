@@ -1,3 +1,7 @@
 {
-    "test": "It works"
+    "input": {
+      "label":"Form Label",
+      "id":"my-input",
+      "name":"my-input-name"
+    }
 }
