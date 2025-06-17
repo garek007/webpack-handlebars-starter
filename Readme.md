@@ -1,0 +1,1 @@
+This repo is a basic starter for webpack with handlebars which I plan to use to build forms in Marketing Cloud. 
