@@ -9,10 +9,16 @@
          {{> input name="dename" label="Data Extension Name" type="text"}}
 
          {{> input name="upload" label="Upload CSV" type="upload"}}
+<slds-grid>
+         {{#> col }}
+            {{> input name="FirstName" label="First Name" type="text"}}
+         {{/col}}
+
+         
+</slds-grid>
 
 
-
-         {{> input name="FirstName" label="First Name" type="text"}}
+         
          {{> input name="LastName" label="Last Name" type="text"}}
          {{> input name="Email" label="Email" type="EmailAddress"}}
 
