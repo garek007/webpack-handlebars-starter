@@ -6,6 +6,7 @@ import template from './index.hbs';
 import _ from 'lodash';
 import './style.css';
 import Icon from './icon.png';
+import '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css';
 
 
 
