@@ -1,42 +1,20 @@
-//var hb = require('handlebars');
-
-import Handlebars from 'handlebars';
-import template from './index.hbs';
-
-import _ from 'lodash';
+import template from './templates/page.hbs';
+import { attachEvents } from './events/actions';
 import './style.css';
 
-import Icon from './icon.png';
+function render() {
 
+  const data = {
+    name: "User",
+    items: ["Item 1","Item 2","Item 3"]
+  };
 
-function component() {
-    const element = document.createElement('div');
-    const data = {
-      name: 'User',
-      items: ['Item 1', 'Item 2', 'Item 3'],
-    };
-      
-    const html = template(data);
-    // Lodash, now imported by this script
-    //element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    //element.innerHTML = html;
-    element.classList.add('hello');
-    console.log('rendering page');
-/*
-    // Add the image to our existing div.
-    const myIcon = new Image();
-    myIcon.src = Icon;
+  const html = template(data);
 
-    element.appendChild(myIcon);
+  document.getElementById("app").innerHTML = html;
 
-*/
-    
+  attachEvents();
 
-    //document.body.innerHTML = html;
-    //element.appendChild(html);
+}
 
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+render();

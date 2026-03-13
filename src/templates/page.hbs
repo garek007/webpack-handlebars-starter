@@ -1,0 +1,25 @@
+<h1>Hello, {{name}}!</h1>
+
+
+
+
+
+  <div class="slds-grid slds-gutters">
+
+    {{#> col size="6"}}
+      {{> text name="dename" label="Data Extension Name"}}
+    {{/col}}
+
+    {{#> col}}
+      {{> buttona variant="brand" name="submit" label="Submit" action="submit"}}
+    {{/col}}
+
+  </div>
+
+<ul>
+{{#each items}}
+  <li>{{this}}</li>
+{{/each}}
+</ul>
+
+{{> file name="upload" label="Upload CSV"}}
