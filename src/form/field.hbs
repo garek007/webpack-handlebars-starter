@@ -1,0 +1,13 @@
+<div class="slds-form-element">
+
+  {{#if label}}
+  <label class="slds-form-element__label" for="{{name}}">
+    {{label}}
+  </label>
+  {{/if}}
+
+  <div class="slds-form-element__control">
+    {{> @partial-block}}
+  </div>
+
+</div>

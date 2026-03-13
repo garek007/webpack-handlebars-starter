@@ -1,15 +1,12 @@
 //var hb = require('handlebars');
 
-import handlebars from 'handlebars';
+import Handlebars from 'handlebars';
 import template from './index.hbs';
 
 import _ from 'lodash';
 import './style.css';
 
 import Icon from './icon.png';
-
-
-
 
 
 function component() {
@@ -22,8 +19,9 @@ function component() {
     const html = template(data);
     // Lodash, now imported by this script
     //element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.innerHTML = html;
+    //element.innerHTML = html;
     element.classList.add('hello');
+    console.log('rendering page');
 /*
     // Add the image to our existing div.
     const myIcon = new Image();
@@ -35,7 +33,7 @@ function component() {
     
 
     //document.body.innerHTML = html;
-    element.appendChild(html);
+    //element.appendChild(html);
 
   
     return element;

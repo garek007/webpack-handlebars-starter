@@ -50,6 +50,11 @@ module.exports = {
       {
         test: /\.hbs$/,
         loader: 'handlebars-loader',
+        options: {
+          partialDirs: [
+            path.resolve(__dirname, "src/form")
+          ]          
+        }
       },      
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
