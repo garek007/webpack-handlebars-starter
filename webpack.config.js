@@ -1,7 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const templateParameters = require('./templateParameters.json');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
+const glob = require("glob");
+const PATHS = {
+  src: glob.sync("./src/**/*", { nodir: true }),
+};
 
 module.exports = {
   entry: './src/index.js',
@@ -11,6 +16,21 @@ module.exports = {
       template: './src/index.hbs',
       filename: 'index.html',
       templateParameters: templateParameters
+    }),
+    new MiniCssExtractPlugin({
+      filename: "style.css"
+    }),
+    new PurgeCSSPlugin({
+      paths: glob.sync("./src/**/*.{hbs,js,html}", { nodir: true }),
+      safelist: [
+        /^slds-size_/,
+        /^slds-col/,
+        /^slds-grid/,
+        /^slds-order/,
+        /^slds-medium/,
+        /^slds-large/,
+        /^slds-icon/
+      ]
     }),
   ],  
   output: {
@@ -22,7 +42,10 @@ module.exports = {
     rules:[
       {
         test: /\.css$/i,
-        use:['style-loader','css-loader'],
+        use:[
+          MiniCssExtractPlugin.loader,
+          "css-loader"
+        ],
       },
       {
         test: /\.hbs$/,
